@@ -1,0 +1,19 @@
+Hello {{ name }} you are {{ age }} years young
+
+
+{ if age > 15 }
+
+<p>you are over 15</p>
+
+{ endif }
+
+
+
+{ for user in users }
+	<p>{{ user.name }} {{ user.surname }}</p>
+{  endfor }
+
+
+
+
+{{ 'string' | md5 }}
