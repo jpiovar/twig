@@ -15,16 +15,23 @@ $md5Filter = new Twig_simpleFilter('md5', function($string){
 $twig->addFilter($md5Filter);
 
 
+$upperFilter = new Twig_simpleFilter('upF', function($string){
+	return strtoupper($string);
+});
+
+$twig->addFilter($upperFilter);
 
 
+/*
 $lexer = new Twig_Lexer($twig, array(
 	'tag_block' => array('{', '}'),
 	'tag_variable' => array('{{', '}}')
 ));
 
 $twig->setLexer($lexer);
+*/
 
-
+$tempVar = array('tt'=>'ttval');
 
 
 echo $twig->render('hello.html', array(
