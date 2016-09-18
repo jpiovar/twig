@@ -25,7 +25,7 @@ $twig->addFilter($upperFilter);
 /*
 $lexer = new Twig_Lexer($twig, array(
 	'tag_block' => array('{', '}'),
-	'tag_variable' => array('{{', '}}')
+	'tag_variable' => array('{{ $', '}}')
 ));
 
 $twig->setLexer($lexer);
