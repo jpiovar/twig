@@ -60,6 +60,12 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 
+
+
+$sql ="INSERT INTO `twig`.`users` (`id`, `name`, `surname`, `info`) VALUES (NULL, 'jozko1', 'mrkvicka1', '8881');";
+$result = $conn->query($sql);
+
+
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
