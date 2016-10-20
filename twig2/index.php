@@ -23,13 +23,6 @@ $twig->addFilter($upperFilter);
 
 
 /*
-$lexer = new Twig_Lexer($twig, array(
-	'tag_block' => array('{', '}'),
-	'tag_variable' => array('{{ $', '}}')
-));
-
-$twig->setLexer($lexer);
-*/
 
 $tempVar = array('tt'=>'ttval');
 
@@ -44,5 +37,54 @@ echo $twig->render('hello.html', array(
 		array('name' => 'Jopo', 'surname' => 'Hrach')
 	)
 ));
+*/
+
+
+
+
+
+
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "twig";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+if($result){
+	echo("<p>controller mysqli db output START</p>");
+	
+	while($row = $result->fetch_assoc()) {
+		
+		echo "<h1>" . $row["id"]. "</h1>"; 
+		
+	}
+	
+	echo("<p>controller mysqli db output END</p>");
+}
+	
+echo $twig->render('hello.html', ['users' => $result]);
+
+
+
+
+
+
+
+
+
+
 
 ?>

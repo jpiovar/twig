@@ -1,4 +1,7 @@
-Hello {{ name }} you are {{ age }} years young 
+<!-- Hello {{ name }} you are {{ age }} years young 
+
+
+
 
 {% set tt = 'tempval' %}
 
@@ -47,3 +50,19 @@ abcd aaa
 	{{ i }} {{ j }}
 	{{ include('sub.html') }}
 {% endfor %}
+
+
+-->
+
+
+
+<p> database mysqli view output</p>
+
+
+{% for user in users %}
+    <br>{{ user.id }} {{ user.name }} {{ user.surname }} {{ user.info }}
+{% endfor %}
+
+
+
+
