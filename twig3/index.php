@@ -52,11 +52,19 @@ $password = "";
 $dbname = "twig";
 
 
+
+
 $dbTwig = new Db;
 
 $dbconnect = $dbTwig->connect($servername,$username,$password,$dbname);
 
 $dboutput = $dbTwig->showAll($dbconnect,"janko");
+
+$dbTwig->close($dbconnect);
+
+
+
+
 
 echo("<br/>mysqli db controller output START <br/>");
 var_dump($dboutput);

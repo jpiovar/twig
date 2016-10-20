@@ -22,7 +22,11 @@ class Db{
   
 	}  
   
-  
+	function close($con){
+		
+		$con->close();
+		
+	}
   
   
 	function showAll($con,$name){	
