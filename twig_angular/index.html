@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="page='p1'">
+ 	<p>Name : <input type="text" ng-model="name"></p>
+ 	<h1>Hello {{name}}</h1>
+	
+	<span ng-click="code='11'">code 11</span><span ng-click="page='p1'">page 1</span> <span ng-click="page='p2'">page 2</span>
+	
+	<div ng-show="page=='p1'" ng-include="'index1.php'"></div>
+	<div ng-show="page=='p2'" ng-include="'index2.php'"></div>
+	
+</div>
+
+</body>
+</html>
