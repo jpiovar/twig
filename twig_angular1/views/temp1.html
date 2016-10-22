@@ -1,0 +1,85 @@
+<!-- Hello {{ name }} you are {{ age }} years young 
+
+
+
+
+{% set tt = 'tempval' %}
+
+
+{% set templ1 %}
+	<p><b>this is it</b>
+		<span>that is</span>	
+	</p>
+{% endset %}
+
+
+
+{% if age > 15 %}
+
+<p>you are over 15</p>
+
+{% endif %}
+
+
+
+{% for user in users %}
+	<p>{{ user.name }} {{ user.surname }}</p>
+{%  endfor %}
+
+{{ 'string' | md5 }}
+<br>
+{{ 'string' | upF }}
+<br>
+{{ 'string' | upF | md5 }}
+
+{% filter upF %}
+abcd aaa 
+{% endfilter %}
+
+
+<br>
+{{ tt }}
+<br>
+{{ templ1 }}
+
+{# set n = array('a'=>'ll','b'=>'ll') #}
+
+{% set j = 0 %}
+{% for i in range(0,3) %}
+	{% set j = j +1 %}
+	{{ i }} {{ j }}
+	{{ include('sub.html') }}
+{% endfor %}
+
+
+-->
+
+<div ng-controller="Temp1Ctrl as tp1">
+
+<p ng-show="code=='11'"> database mysqli view output t1</p>
+
+
+{% for user in users %}
+    <br>{{ user.id }} {{ user.name }} {{ user.surname }} {{ user.info }}
+{% endfor %}
+
+
+
+{[{tp1.message}]}
+<br/>	
+	Name: <input ng-model="tp1.name" value="" name="name" />
+	<br/>
+	Surname: <input ng-model="tp1.surname" value="" name="name" /> 	
+	<br/>
+	Info: <input ng-model="tp1.info" value="" name="info" />
+	<br/>
+	<button type="button" class="btn btn-success" ng-click="tp1.processInputTemp1(name)">Process input template1</button>
+
+	<br/> OUTPUT Table showall temp1<br/>
+	<ul>
+		<li ng-repeat="item in tp1.dataPost1" ng-show="item.id">{[{item.id}]} - {[{item.name}]} - {[{item.surname}]} - {[{item.info}]}</h1>
+	</ul>
+	{[{tp1.dataPost1[0].countItems}]}
+
+
+</div>
