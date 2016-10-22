@@ -19,6 +19,17 @@ session_start();
 <br/>
 php session   
 
+<script>
+if (typeof(w) == "undefined") {
+    w = new Worker("webworker/sessionChecker.js");
+}
+w.onmessage = function(event){
+    document.getElementById("result").innerHTML = event.data;
+};
+</script>
+
+<p id="result"></p>
+
 <?php
 // Set session variables
 //$_SESSION["sesok"] = "green";
