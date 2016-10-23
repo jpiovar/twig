@@ -2,14 +2,12 @@
 
 session_start();
 
-$data = file_get_contents("php://input");
-$postData = json_decode($data,true);
 
 
 
-$ses = $postData['sesok'];
-$sesoperation = $postData['sesoperation'];
 
+$ses = $_POST['sesok'];
+$sesoperation = $_POST['sesoperation'];
 
 
 if($sesoperation == "set"){
@@ -26,7 +24,13 @@ if($sesoperation == "set"){
 	
 }
 
-echo $ses;
+
+if(!empty($_SESSION['sesok'])){
+	echo $_SESSION['sesok'];
+} else {
+	echo "";
+}
+
 
 
 ?>

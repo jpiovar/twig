@@ -23,7 +23,7 @@ php session
 if (typeof(w) == "undefined") {
     w = new Worker("webworker/sessionChecker.js");
 }
-w.onmessage = function(event){
+w.onmessage = function(event){ debugger;
     document.getElementById("result").innerHTML = event.data;
 };
 </script>
